@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.8">
+  <actions/>
+  <description>Named node with stash/unstash</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.23">
+    <script>node {
+   stage(&apos;Preparation&apos;) { // for display purposes
+      // Get some code from a GitHub repository
+      dir(&apos;sources&apos;) {
+        git &apos;https://github.com/jglick/simple-maven-project-with-tests.git&apos;
+      }
+      sh &apos;tar czf sources.tgz sources&apos;
+      stash includes: &apos;sources.tgz&apos;, name: &apos;sources&apos;
+   }
+}
+
+node(&apos;runtest&apos;) {
+    stage(&apos;Run Tests&apos;){
+        unstash &apos;sources&apos;
+        sh &apos;tar xzf sources.tgz&apos;
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+</flow-definition>

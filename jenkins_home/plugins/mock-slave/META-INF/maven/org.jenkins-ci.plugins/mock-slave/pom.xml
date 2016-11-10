@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>2.14</version>
+        <relativePath />
+    </parent>
+    <artifactId>mock-slave</artifactId>
+    <version>1.10</version>
+    <packaging>hpi</packaging>
+    <name>Mock Agent Plugin</name>
+    <url>https://wiki.jenkins-ci.org/display/JENKINS/Mock+Slave+Plugin</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
+        <tag>mock-slave-1.10</tag>
+    </scm>
+    <properties>
+        <jenkins.version>1.609.3</jenkins.version>
+        <java.level>6</java.level>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jenkins-ci.tools</groupId>
+                <artifactId>maven-hpi-plugin</artifactId>
+                <configuration>
+                    <loggers>
+                        <org.jenkinci.plugins.mock_slave>FINE</org.jenkinci.plugins.mock_slave>
+                        <!-- hudson.slaves.NodeProvisioner$2 run too noisy: <hudson.slaves>FINE</hudson.slaves> -->
+                    </loggers>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>durable-task</artifactId>
+            <version>1.5</version>
+        </dependency>
+    </dependencies>
+</project>

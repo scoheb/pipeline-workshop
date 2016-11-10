@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkins.plugins.lockableresources.LockableResourcesManager plugin="lockable-resources@1.10">
+  <resources>
+    <org.jenkins.plugins.lockableresources.LockableResource>
+      <name>update-center-server</name>
+      <description></description>
+      <labels></labels>
+      <queueItemId>0</queueItemId>
+      <queuingStarted>0</queuingStarted>
+      <queuedContexts/>
+    </org.jenkins.plugins.lockableresources.LockableResource>
+  </resources>
+</org.jenkins.plugins.lockableresources.LockableResourcesManager>

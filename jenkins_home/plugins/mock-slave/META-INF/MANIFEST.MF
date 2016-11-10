@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jglick
+Build-Jdk: 1.8.0_92
+Extension-Name: mock-slave
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: mock-slave
+Implementation-Version: 1.10
+Group-Id: org.jenkins-ci.plugins
+Short-Name: mock-slave
+Long-Name: Mock Agent Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Mock+Slave+Plugin
+Plugin-Version: 1.10
+Hudson-Version: 1.609.3
+Jenkins-Version: 1.609.3
+Plugin-Dependencies: durable-task:1.5
+Plugin-Developers: 
+

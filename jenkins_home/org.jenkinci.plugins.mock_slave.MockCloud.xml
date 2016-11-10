@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinci.plugins.mock__slave.MockCloud_-DescriptorImpl plugin="mock-slave@1.10">
+  <counter>6</counter>
+</org.jenkinci.plugins.mock__slave.MockCloud_-DescriptorImpl>
